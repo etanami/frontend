@@ -20,16 +20,22 @@ export default function App() {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch('/payments/create-payment-intent', {
+    fetch('http://localhost:4242/payments/create-payment-intent', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ amount: 4999, currency: 'usd'}),
+      body: JSON.stringify({ amount: 4999, currency: 'usd' }),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.json();
+      })
       .then((data) => {
         setClientSecret(data.clientSecret);
         // [DEV] For demo purposes only
         setDpmCheckerLink(data.dpmCheckerLink);
+        //setLoading(false);
       });
   }, []);
 
