@@ -20,7 +20,7 @@ export default function App() {
 
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
-    fetch('http://localhost:4242/payments/create-payment-intent', {
+    fetch('https://moonlit-crostata-889efb.netlify.app/payments/create-payment-intent', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ amount: 4999, currency: 'usd' }),
