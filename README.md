@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Stripe Payment Processing Frontend Integration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This project is a frontend integration for Stripe payment processing, allowing users to securely make payments through a web application. It utilizes React for the frontend and integrates with Stripe's API to handle payment intents.
 
-## Available Scripts
+## Features
+- **Secure Payment Processing**: Utilizes Stripe's API to handle payments securely.
+- **Dynamic Payment Intent Creation**: Automatically creates payment intents upon page load.
+- **Responsive Design**: Built with a responsive layout to ensure usability across devices.
+- **Checkout Flow**: Provides a seamless checkout experience with a dedicated checkout form.
+- **Completion Page**: Displays a confirmation page after successful payment.
+- **Environment Configuration**: Uses environment variables to manage sensitive information like API keys.
 
-In the project directory, you can run:
+## Technologies Used
+- **React**: A JavaScript library for building user interfaces.
+- **Stripe.js**: A JavaScript library for integrating Stripe payments.
+- **React Router**: For handling routing within the application.
+- **CSS**: For styling the application.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
+- Node.js (version 14 or higher)
+- npm (Node package manager)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/etanami/stripe-frontend.git
+   cd stripe-frontend
+   ```
 
-### `npm test`
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Create a `.env` file in the root directory and add your Stripe public key:
+   ```plaintext
+   REACT_APP_STRIPE_PUBLIC_KEY=your_stripe_public_key_here
+   ```
 
-### `npm run build`
+### Running the Application
+To start the development server, run:
+```
+npm start
+```
+The application will be available at `http://localhost:3000`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### API Integration
+Go to `https://github.com/etanami/stripe-backend` to clone and setup the backend.
+Ensure that your backend server is running and accessible at `http://localhost:4242`. This server should handle the payment intent creation.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
+- Navigate to the `/checkout` route to initiate the payment process.
+- Fill in the required payment details and submit the form.
+- Upon successful payment, you will be redirected to the completion page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing
+Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
 
-### `npm run eject`
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgments
+- [Stripe](https://stripe.com) for providing a robust payment processing solution.
+- [React](https://reactjs.org) for the powerful UI library.
